@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  IMAGE_NAME: masungil/echo-hostname
+  IMAGE_NAME: snowkwon/echo-hostname
 
 jobs:
   build:
