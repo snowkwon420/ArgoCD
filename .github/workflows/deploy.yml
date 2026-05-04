@@ -45,7 +45,15 @@ jobs:
         git clone https://github.com/snowkwon420/ArgoCD.git
         cd app_exam-k8s/k8s/
 
+        echo "수정전"
+        cat deployment.yaml
+        echo "========="
+        
         sed -i "s|image:.*|image: $IMAGE_NAME:${{ github.sha }}|g" deployment.yaml
+
+         echo "수정후"
+        cat deployment.yaml
+        echo "========="
 
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
