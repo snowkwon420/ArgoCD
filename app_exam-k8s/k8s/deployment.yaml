@@ -17,7 +17,7 @@ spec:
       - name: dockerhub-secret #docker hub 관련 정보 추가
       containers:
       - name: my-webserver
-        image: snowkwon/echo-hostname:50094783d9fd15d566de11bc3f3fca31ca19ce3c
+        image: snowkwon/echo-hostname:630e4f6dbb823d1e59606e90d29fc7c6590e7c5a
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
