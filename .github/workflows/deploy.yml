@@ -32,17 +32,4 @@ jobs:
     - name: Push Docker image
       run: |
         docker push $IMAGE_NAME:${{ github.sha }}
-
-    - name: Update Kubernetes manifest
-      run: |
-        git clone https://github.com/masungil70/argocd_exam.git
-        cd app_exam-k8s/k8s/
-
-        sed -i "s|image:.*|image: $IMAGE_NAME:${{ github.sha }}|g" deployment.yaml
-
-        git config user.name "github-actions"
-        git config user.email "github-actions@github.com"
-
-        git add .
-        git commit -m "update image tag ${{ github.sha }}"
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/masungil70/argocd_exam.git
+        
